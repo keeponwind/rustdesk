@@ -68,13 +68,13 @@ Future<void> main(List<String> args) async {
           kAppTypeDesktopRemote,
         );
         break;
-      case WindowType.FileTransfer:
-        desktopType = DesktopType.fileTransfer;
-        runMultiWindow(
-          argument,
-          kAppTypeDesktopFileTransfer,
-        );
-        break;
+      // case WindowType.FileTransfer:
+      //   desktopType = DesktopType.fileTransfer;
+      //   runMultiWindow(
+      //     argument,
+      //     kAppTypeDesktopFileTransfer,
+      //   );
+      // break;
       case WindowType.PortForward:
         desktopType = DesktopType.portForward;
         runMultiWindow(
@@ -183,11 +183,11 @@ void runMultiWindow(
         params: argument,
       );
       break;
-    case kAppTypeDesktopFileTransfer:
-      widget = DesktopFileTransferScreen(
-        params: argument,
-      );
-      break;
+    // case kAppTypeDesktopFileTransfer:
+    //   widget = DesktopFileTransferScreen(
+    //     params: argument,
+    //   );
+      // break;
     case kAppTypeDesktopPortForward:
       widget = DesktopPortForwardScreen(
         params: argument,
@@ -219,10 +219,10 @@ void runMultiWindow(
         );
       }
       break;
-    case kAppTypeDesktopFileTransfer:
-      await restoreWindowPosition(WindowType.FileTransfer,
-          windowId: kWindowId!);
-      break;
+    // case kAppTypeDesktopFileTransfer:
+    //   await restoreWindowPosition(WindowType.FileTransfer,
+    //       windowId: kWindowId!);
+    //   break;
     case kAppTypeDesktopPortForward:
       await restoreWindowPosition(WindowType.PortForward, windowId: kWindowId!);
       break;
