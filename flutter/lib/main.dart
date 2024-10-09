@@ -35,6 +35,14 @@ int? kWindowId;
 WindowType? kWindowType;
 late List<String> kBootArgs;
 
+void main() {
+  // 替换默认的剪贴板实现
+  Clipboard.setData = CustomClipboard.setData;
+  Clipboard.getData = CustomClipboard.getData;
+
+  runApp(MyApp());
+}
+
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
 
